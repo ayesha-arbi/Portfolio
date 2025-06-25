@@ -5,6 +5,8 @@
     font-family: "General Sans";
     background: black;
 }
+
+
 #minicircle{
     position:absolute;
     z-index: 99999;
@@ -306,98 +308,6 @@ body::selection{
         text-align: left;
     }
 }
-#whatelse{
-    color:#fff;
-    padding-bottom:7vw;
-    padding:30px 40px;
-}
-
-#whatelse h5{
-    text-transform: uppercase;
-    opacity:0.6;
-}
-#whatelse h3{
-    text-transform: uppercase;
-    font-size: 14px;
-    margin-top:10px;
-}
-#footer{
-    height: auto;
-    color:#fff;
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 30px 40px;
-    
-    
-}
-#left{
-display: flex;
-gap: 20px
-}
-#right{
-    display:flex;
-    gap:30px;
-
-}
-#footer a{
-    color:#fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight:  500;
-}
-.letsconnect{
-    background-color: transparent;
-    padding: 40px 40px;
-    text-align: left;
-    width:80%;
-    
-    
-}
-.letsconnect h2{
-    background-color: transparent;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 9vw;
-    opacity:1;
-    font-weight: 900;
-    text-transform: uppercase;
-    color:transparent;
-    -webkit-text-stroke: 1px #ffffff;
-    letter-spacing: 2px;
-line-height: 1.1;
-transition: all 0.3s ease;
-
-}
-
-
-.distort-hover {
-  position: relative;
-  display: inline-block;
-  color: white;
-  font-size: 5vw;
-  font-weight: 800;
-  overflow: hidden;
-  --x: 50%;
-  --y: 50%;
-  transition: all 0.3s ease;
-}
-
-.distort-hover::before {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: rgb(255, 0, 0);
-  mix-blend-mode: difference;
-  pointer-events: none;
-  width: 100%;
-  height: 100%;
-  transform: translate(0, 0);
-  clip-path: circle(15vw at var(--x) var(--y));
-  transition: clip-path 0.2s ease;
-  font-weight: inherit;
-}
 
 #featured {
   padding:10vw 10vw;
@@ -429,10 +339,128 @@ transition: all 0.3s ease;
   display: block;
 }
 
+#whatelse{
+    color:#fff;
+    padding-bottom:7vw;
+    padding:30px 40px;
+}
+
+#whatelse h5{
+    text-transform: uppercase;
+    opacity:0.6;
+}
+
+#whatelse a{
+    text-decoration: none;
+    font-size: 14px;
+    margin-top:10px;
+}
+
+
+#whatelse h3 a {
+  text-decoration: none;
+  color: white; /* or any color you want */
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.letsconnect{
+    background-color: transparent;
+    padding: 40px 40px;
+    text-align: left;
+    width:80%;
+    
+    
+}
+.letsconnect h2{
+    background-color: transparent;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 9vw;
+    opacity:1;
+    font-weight: 900;
+    text-transform: uppercase;
+    color:transparent;
+    -webkit-text-stroke: 1px #ffffff;
+    letter-spacing: 2px;
+line-height: 1.1;
+transition: all 0.3s ease;
+
+}
+
+.label{
+    color: #000000;
+    background: #ffffff;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.yellow{
+    font-size: 7vw;
+    font-weight: 300;
+    background: yellow;
+    color:#000000;
+    -webkit-text-stroke: 1px #000000;
+}
+
+#footer{
+    height: auto;
+    color:#fff;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 40px;
+    
+    
+}
+#left{
+display: flex;
+gap: 20px
+}
+#right{
+    display:flex;
+    gap:30px;
+
+}
+#footer a{
+    color:#fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight:  500;
+}
+
+
+.distort-hover {
+  position: relative;
+  display: inline-block;
+  color: white;
+  font-size: 5vw;
+  font-weight: 800;
+  overflow: hidden;
+  --x: 50%;
+  --y: 50%;
+  transition: all 0.3s ease;
+}
+
+.distort-hover::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: rgb(255, 0, 0);
+  mix-blend-mode: difference;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  transform: translate(0, 0);
+  clip-path: circle(15vw at var(--x) var(--y));
+  transition: clip-path 0.2s ease;
+  font-weight: inherit;
+}
+
+
 /* Responsive tweaks */
 @media (max-width: 768px) {
   .photogallery {
-    column-count: 2;
+    column-count: 3;
   }
 }
 
@@ -460,32 +488,3 @@ transition: all 0.3s ease;
   position: relative;
   display: inline-block;
 }
-
-
-.background {
-   
-  position: relative;
-  width: 100%;
-  min-height: 100vh; 
-  overflow: hidden;}
-
-.bg-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-  z-index: -1;
-}
-
-.letsconnect,
-#footer {
-  position: relative;
-  z-index: 1;
-  color: white; /* Ensure visibility over video */
-}
-
-
-
