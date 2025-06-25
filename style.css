@@ -1,0 +1,491 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "General Sans";
+    background: black;
+}
+#minicircle{
+    position:absolute;
+    z-index: 99999;
+    width: 10px;
+    height: 10px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
+}
+
+.floaty {
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.bounding{
+    width:fit-content;
+    overflow:hidden;
+}
+.bounding .boundingelement{
+    transform: translateY(100%);
+}
+.hover-lift {
+  display: inline-block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: scale(105%);
+  
+}
+
+
+.center-underline {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: inherit; /* keeps the current color */
+}
+
+.center-underline::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transform: translateX(-50%);
+  transition: width 0.4s ease;
+}
+
+.center-underline:hover::after {
+  width: 100%;
+}
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+body::selection{
+    background: #ffffff;
+    color: #000000;
+}
+
+#main {
+    width: 100%;
+    height: auto;
+}
+
+#hero {
+    position: relative;
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+}
+
+#nav {
+    width: 100%;
+    padding: 20px 40px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px
+}
+
+#heading {
+    margin-top: 75px;
+    letter-spacing: 2px;
+}
+
+#heading h1 {
+    margin-left: 30px;
+    opacity: 0.65;
+    line-height: 1;
+    font-family: "General Sans Regular";
+    font-size: 10vw;
+    text-transform: upper-case;
+    font-weight:1200;
+}
+
+#heading #secondh1 {
+    margin-left: 130px;
+}
+
+.blocktext {
+    width: fit-content;
+    Display:flex;
+    flex-direction: column;
+    align-items: end;
+
+}
+
+.blocktext h5 {
+    text-align: right;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+#smallheadings {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-top: 100px;
+    padding: 30px;
+
+}
+
+#smallheadings h5 {
+    text-align: right;
+    text-transform: uppercase;
+    margin-top: .5px;
+    font-size: 1.5vw;
+    letter-spacing: 1px;
+}
+
+#herofooter {
+    padding: 0 2vw;
+    position: absolute;
+    bottom: 3%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#herofooter a {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+
+}
+
+#herofooter #iconset {
+    display: flex;
+    gap: 5px;
+}
+
+#herofooter .circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #888;
+}
+#herofooter .circle i{
+    background: #888;
+}
+
+#second {
+    font-family: "General Sans Regular";
+    color: #fff;
+    padding: 200px 40px;
+    background: black;
+    width: 100%;
+    height: 100vh;
+}
+
+#second .elem {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    border-top: 1px solid #888;
+    padding: 3.5vw 3vw;
+    padding-right: 0;
+    position: relative;
+    
+}
+
+.elem h1 {
+    font-size: 7.6vw;
+    text-transform: uppercase;
+    opacity: 0.65;
+}
+
+.elemlast {
+    border-bottom: 1px solid #888;
+}
+
+.elem img {
+    opacity:0;
+    height: 140%;
+    position: absolute;
+    z-index: 999;
+    
+    
+
+}
+#about {
+    margin-top: 20vw;
+    margin-bottom: 50px;
+    padding: 10vw 15vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5vw;
+    flex-wrap: wrap;}
+
+#imageabout {
+    flex: 1;
+    display: flex;
+    justify-content: right; /* this will change on mobile */
+}
+#imageabout img {
+    border-radius: 50%;
+    height: 25vw;
+    width: 25vw;
+}
+
+#textabout {
+    font-size: smaller;
+    flex: 1;
+    max-width: 600px;
+    color: #fff;
+    text-align: left;
+    letter-spacing: 1px;
+    line-height: 20px;
+}
+#textabout h5 {
+    flex: 1;
+    max-width: 600px;
+    color: #888;
+}
+#textabout a {
+    display: inline-block;
+    margin: 1.5vw 0;
+    padding: 2px 10px;
+    color: #fff;
+    text-decoration: none;
+    background: #000;
+    border: 1px solid white;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+#textabout a:hover {
+    background: #fff;
+    color: #000;
+}
+
+
+@media (max-width: 768px) {
+    #about {
+        flex-direction: column;
+        align-items: flex-start; /* ensures left alignment */
+    }
+
+    #imageabout {
+        justify-content: flex-start; /* left align the image */
+        width: 100%; /* make sure it spans the full width */
+    }
+
+    #imageabout img {
+        height: 30vw;
+        width: 30vw;
+    }
+
+    #textabout {
+        padding-top: 20px;
+        text-align: left;
+    }
+}
+#whatelse{
+    color:#fff;
+    padding-bottom:7vw;
+    padding:30px 40px;
+}
+
+#whatelse h5{
+    text-transform: uppercase;
+    opacity:0.6;
+}
+#whatelse h3{
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-top:10px;
+}
+#footer{
+    height: auto;
+    color:#fff;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 40px;
+    
+    
+}
+#left{
+display: flex;
+gap: 20px
+}
+#right{
+    display:flex;
+    gap:30px;
+
+}
+#footer a{
+    color:#fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight:  500;
+}
+.letsconnect{
+    background-color: transparent;
+    padding: 40px 40px;
+    text-align: left;
+    width:80%;
+    
+    
+}
+.letsconnect h2{
+    background-color: transparent;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 9vw;
+    opacity:1;
+    font-weight: 900;
+    text-transform: uppercase;
+    color:transparent;
+    -webkit-text-stroke: 1px #ffffff;
+    letter-spacing: 2px;
+line-height: 1.1;
+transition: all 0.3s ease;
+
+}
+
+
+.distort-hover {
+  position: relative;
+  display: inline-block;
+  color: white;
+  font-size: 5vw;
+  font-weight: 800;
+  overflow: hidden;
+  --x: 50%;
+  --y: 50%;
+  transition: all 0.3s ease;
+}
+
+.distort-hover::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: rgb(255, 0, 0);
+  mix-blend-mode: difference;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  transform: translate(0, 0);
+  clip-path: circle(15vw at var(--x) var(--y));
+  transition: clip-path 0.2s ease;
+  font-weight: inherit;
+}
+
+#featured {
+  padding:10vw 10vw;
+}
+
+#featured .fheading h1 {
+  color: white;
+  line-height: 1;
+  font-weight: 400;
+  font-size: 10vw;
+}
+#featured .fheading h1:nth-child(2) {
+  opacity: 0.65;
+  color: transparent;
+  -webkit-text-stroke: 1px #fff;
+  
+}
+.photogallery {
+  column-count: 2;
+  column-gap: 1rem;
+  padding: 2vw 0;
+}
+
+.photogallery img {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  break-inside: avoid;
+  display: block;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .photogallery {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .photogallery {
+    column-count: 1;
+  }
+}
+
+
+.magnet-btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.magnet-btn-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+
+.background {
+   
+  position: relative;
+  width: 100%;
+  min-height: 100vh; 
+  overflow: hidden;}
+
+.bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: -1;
+}
+
+.letsconnect,
+#footer {
+  position: relative;
+  z-index: 1;
+  color: white; /* Ensure visibility over video */
+}
+
+
+
