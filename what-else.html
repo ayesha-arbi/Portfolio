@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Else I Do | Ayesha</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      font-family: "General Sans", sans-serif;
+    }
+    body {
+      background: radial-gradient(ellipse at top left, #1e1e2f, #111);
+      color: #ffffff;
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, #7ba4e6, #b094f0);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 1rem;
+      padding: 2rem;
+      transition: all 0.3s ease;
+    }
+    .glass:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+    }
+    .section-divider {
+      background: linear-gradient(to right, transparent, #8b5cf6, transparent);
+      height: 2px;
+      border-radius: 50%;
+    }
+    .neon-icon {
+      filter: drop-shadow(0 0 5px #8b5cf6);
+    }
+  </style>
+</head>
+<body class="antialiased">
+    <!-- Video Background Container -->
+<div class="fixed inset-0 z-[-1] overflow-hidden">
+  <video autoplay muted loop playsinline class="w-full h-full object-cover">
+    <source src="myvideo.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Optional dark overlay for readability -->
+  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+</div>
+
+  <main class="max-w-5xl mx-auto px-4 py-16">
+    <header class="text-center mb-20">
+      <h1 class="text-5xl md:text-6xl font-extrabold gradient-text mb-4">👩‍💻 What Else I Do</h1>
+      <p class="text-lg text-gray-400 leading-relaxed">
+        I'm a UX Designer and Software Engineering student blending visuals with code. From prototyping to debugging DSA, I shape ideas into experiences.
+      </p>
+    </header>
+
+    <div class="section-divider mb-20"></div>
+
+    <section class="mb-20">
+      <h2 class="text-3xl font-bold text-center gradient-text mb-12">🧠 Skills & Tech Stack</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div class="glass">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-paint-brush text-blue-500 text-2xl neon-icon mr-4"></i>
+            <h3 class="text-xl font-semibold">UX/UI Design</h3>
+          </div>
+          <p class="text-gray-300">
+            Creating intuitive and beautiful interfaces using user-centered principles, wireframes, design systems & prototyping tools.
+          </p>
+        </div>
+
+        <div class="glass">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-code text-purple-500 text-2xl neon-icon mr-4"></i>
+            <h3 class="text-xl font-semibold">Web Development</h3>
+          </div>
+          <p class="text-gray-300">
+            Building responsive websites with HTML5, CSS3, JavaScript. Experienced in modern frameworks and performance-focused design.
+          </p>
+        </div>
+
+        <div class="glass">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-project-diagram text-green-500 text-2xl neon-icon mr-4"></i>
+            <h3 class="text-xl font-semibold">DSA & Problem Solving</h3>
+          </div>
+          <p class="text-gray-300">
+            Proficient in data structures and algorithms. Focused on writing clean, optimal code to solve real-world challenges.
+          </p>
+        </div>
+
+        <div class="glass">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-laptop-code text-yellow-400 text-2xl neon-icon mr-4"></i>
+            <h3 class="text-xl font-semibold">Languages</h3>
+          </div>
+          <p class="text-gray-300">
+            Fluent in Python, C++, C#, and JavaScript. Leveraging each where they shine best—whether it's backend logic or frontend interactivity.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider mb-20"></div>
+
+    <section class="text-center">
+      <h2 class="text-3xl font-bold gradient-text mb-8">🚧 Projects</h2>
+      <div class="glass inline-block">
+        <i class="fas fa-hat-wizard text-4xl mb-4 text-pink-400 neon-icon"></i>
+        <h3 class="text-xl font-semibold mb-2">Coming Soon...</h3>
+        <p class="text-gray-300 mb-4">
+          I'm cooking up some serious magic 🔮<br>
+          Stay tuned for projects that blend code + design like never before.
+        </p>
+        <span class="inline-block bg-gray-900 px-4 py-1 rounded-full text-sm text-gray-400">
+          <i class="fas fa-hourglass-half text-yellow-500 mr-2"></i> Projects Loading
+        </span>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
