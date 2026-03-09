@@ -1,7 +1,74 @@
-const scroll = new LocomotiveScroll({
-  el: document.querySelector('#main'),
+const locoScroll = new LocomotiveScroll({  el: document.querySelector('#main'),
   smooth: true
 });
+// ── FULLSCREEN MENU ──
+(function initFullscreenMenu() {
+    const menu     = document.getElementById('fullscreen-menu');
+    const overlay  = document.getElementById('menu-overlay');
+    const content  = document.getElementById('menu-content');
+    const trigger  = document.getElementById('menu-trigger');
+    const closeBtn = document.getElementById('menu-close');
+    const links    = Array.from(document.querySelectorAll('.menu-link'));
+    const mFooter  = document.getElementById('menu-footer');
+
+    if (!menu || !trigger) return;
+
+    let isOpen = false;
+
+    // set initial hidden state
+    gsap.set(overlay,  { yPercent: -100 });
+    gsap.set(content,  { opacity: 0 });
+    gsap.set(links,    { y: "110%" });
+    gsap.set(mFooter,  { opacity: 0 });
+
+    function openMenu() {
+        if (isOpen) return;
+        isOpen = true;
+        menu.classList.add('is-open');
+        locoScroll.stop();
+        gsap.set(links, { y: "110%" });
+
+        gsap.timeline()
+            .to(overlay, { yPercent: 0,  duration: 0.85, ease: "expo.inOut" })
+            .to(content,  { opacity: 1,  duration: 0.2  }, "-=0.15")
+            .to(links,    { y: "0%", stagger: 0.06, duration: 0.7, ease: "expo.out" }, "-=0.1")
+            .to(mFooter,  { opacity: 1,  duration: 0.4  }, "-=0.3");
+    }
+
+    function closeMenu() {
+        if (!isOpen) return;
+        isOpen = false;
+
+        gsap.timeline({
+            onComplete() {
+                menu.classList.remove('is-open');
+                locoScroll.start();
+                gsap.set(overlay, { yPercent: -100 });
+                gsap.set(content, { opacity: 0 });
+                gsap.set(mFooter, { opacity: 0 });
+            }
+        })
+        .to([...links].reverse(), { y: "-110%", stagger: 0.04, duration: 0.35, ease: "power2.in" })
+        .to(overlay, { yPercent: -100, duration: 0.7, ease: "expo.inOut" }, "-=0.1");
+    }
+
+    trigger.addEventListener('click', () => isOpen ? closeMenu() : openMenu());
+    closeBtn.addEventListener('click', closeMenu);
+
+    // clicking a link closes menu then scrolls to section
+    links.forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            const targetEl = document.getElementById(
+                link.getAttribute('href').replace('#', '')
+            );
+            closeMenu();
+            setTimeout(() => {
+                if (targetEl) locoScroll.scrollTo(targetEl);
+            }, 950);
+        });
+    });
+})();
 
 function firstPageAnim() {
   var tl = gsap.timeline();
@@ -56,6 +123,8 @@ circlemousefollower();
 firstPageAnim();
 circletransform();
 
+
+
 document.querySelectorAll(".elem").forEach(function (elem) {
   var rotate = 0;
   var diffrot = 0;
@@ -79,6 +148,20 @@ document.querySelectorAll(".elem").forEach(function (elem) {
       left: dets.clientX,
       rotate: gsap.utils.clamp(-20, 20, diffrot * 0.5),
     }), 0;
+  });
+});
+
+gsap.utils.toArray(".experience-item").forEach(item => {
+  gsap.from(item.querySelector(".exp-details"), {
+    y: 50,
+    opacity: 0,
+    duration: 1,
+    scrollTrigger: {
+      trigger: item,
+      start: "top 80%",
+      end: "bottom 20%",
+      toggleActions: "play none none reverse"
+    }
   });
 });
 
@@ -134,4 +217,29 @@ btn.addEventListener("mouseleave", () => {
     ease: "power3.out"
   });
 });
+document.querySelectorAll('.bento-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    const x = ((e.clientX - r.left) / r.width - 0.5) * 16;
+    const y = ((e.clientY - r.top) / r.height - 0.5) * 16;
 
+    gsap.to(card, {
+      rotateY: x,
+      rotateX: -y,
+      transformPerspective: 900,
+      duration: 0.35,
+      ease: "power2.out",
+      overwrite: "auto"
+    });
+  });
+
+  card.addEventListener('mouseleave', () => {
+    gsap.to(card, {
+      rotateY: 0,
+      rotateX: 0,
+      duration: 0.7,
+      ease: "elastic.out(1, 0.5)",
+      overwrite: "auto"
+    });
+  });
+});

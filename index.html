@@ -13,12 +13,40 @@
 </head>
 
 <body>
+    <!-- FULLSCREEN MENU OVERLAY -->
+    <div id="fullscreen-menu">
+        <div id="menu-overlay"></div>
+        <div id="menu-content">
+            <button id="menu-close"><i class="ri-close-line"></i></button>
+            <nav id="menu-nav">
+                <div class="menu-item-wrap">
+                    <a href="#hero" class="menu-link" data-index="01">Home</a>
+                </div>
+                <div class="menu-item-wrap">
+                    <a href="#featured" class="menu-link" data-index="02">Featured Projects</a>
+                </div>
+                <div class="menu-item-wrap">
+                    <a href="#experience" class="menu-link" data-index="03">Experience</a>
+                </div>
+                <div class="menu-item-wrap">
+                    <a href="#about" class="menu-link" data-index="04">About</a>
+                </div>
+                <div class="menu-item-wrap">
+                    <a href="#footer" class="menu-link" data-index="05">Contact</a>
+                </div>
+            </nav>
+            <div id="menu-footer">
+                <span>© 2025 Ayesha Zahid</span>
+                <span>Graphic Designer</span>
+            </div>
+        </div>
+    </div>
     <div id="minicircle"></div>
     <div id="main">
         <div id="hero">
             <div id="nav">
                 <a href="#" class="hover-lift magnet-btn">Ayesha Zahid</a>
-                <h4 class="hover-lift magnet-btn">MENU+</h4>
+                <h4 id="menu-trigger" class="hover-lift magnet-btn">MENU+</h4>
             </div>
             <div id="heading">
                 <div class="bounding ">
@@ -43,8 +71,8 @@
                 </div>
             </div>
             <div id="herofooter">
-                <a href="https://makeaweb.vercel.app/" target="_blank" class="center-underline">Graphic Designer at Make
-                    A Web<i class="ri-arrow-right-up-line"></i></a>
+                <a href="what-else.html" target="_blank" class="center-underline">Ayesha as a Developer
+                    <i class="ri-arrow-right-up-line"></i></a>
                 <div id="iconset">
                     <div class="circle"><i class="ri-arrow-down-line"></i></div>
                     <div class="circle"><i class="ri-arrow-down-line"></i></div>
@@ -86,31 +114,86 @@
             <div class="fheading">
                 <h1>Featured</h1>
                 <h1>Projects</h1>
-                <div class="photogallery">
-                    <img src="img1.jpg" alt="img">
-                    <img src="img3.jpg" alt="img">
-                    <img src="img4.jpg" alt="img">
-                    <img src="img13.jpg" alt="img">
-                    <img src="img10.jpg" alt="img">
-                    <img src="img5.jpg" alt="img">
-                    <img src="logo.png" alt="img">
-                    <img src="img6.jpg" alt="img">
-                    <img src="img14.jpg" alt="img">
-                    <img src="img7.jpg" alt="img">
-                    <img src="img8.jpg" alt="img">
-                    <img src="img9.jpg" alt="img">
-                    <img src="img11.jpg" alt="img">
-                    <img src="img12.jpg" alt="img">
-                    <img src="img16.jpeg" alt="img">
-                    <img src="img15.jpeg" alt="img">
-                    <img src="img17.jpg" alt="img">
-                    
-                </div>
+            </div>
+
+            <div class="bento-grid">
+
+                <!-- 01 Landing Pages — tall left card -->
+                <a href="landing-pages.html" class="bento-card bento-large">
+                    <div class="bento-bg"></div>
+                    <div class="bento-inner">
+                        <span class="bento-tag">01</span>
+                        <h2 class="bento-title">Landing<br>Pages</h2>
+                        <p class="bento-desc">Web experiences crafted with intention</p>
+                        <div class="bento-arrow"><i class="ri-arrow-right-up-line"></i></div>
+                    </div>
+                </a>
+
+                <!-- 02 Posters — top right -->
+                <a href="posters.html" class="bento-card bento-tall">
+                    <div class="bento-bg"></div>
+                    <div class="bento-inner">
+                        <span class="bento-tag">02</span>
+                        <h2 class="bento-title">Posters</h2>
+                        <p class="bento-desc">Bold prints that demand attention</p>
+                        <div class="bento-arrow"><i class="ri-arrow-right-up-line"></i></div>
+                    </div>
+                </a>
+
+                <!-- 03 Logos — top far right -->
+                <a href="logos.html" class="bento-card bento-wide">
+                    <div class="bento-bg"></div>
+                    <div class="bento-inner">
+                        <span class="bento-tag">03</span>
+                        <h2 class="bento-title">Logos</h2>
+                        <p class="bento-desc">Identities built to last</p>
+                        <div class="bento-arrow"><i class="ri-arrow-right-up-line"></i></div>
+                    </div>
+                </a>
+
+                <!-- 04 Figma — bottom right wide -->
+                <a href="figma-designs.html" class="bento-card bento-square">
+                    <div class="bento-bg"></div>
+                    <div class="bento-inner">
+                        <span class="bento-tag">04</span>
+                        <h2 class="bento-title">Figma<br>Designs</h2>
+                        <p class="bento-desc">UI systems & interactive prototypes</p>
+                        <div class="bento-arrow"><i class="ri-arrow-right-up-line"></i></div>
+                    </div>
+                </a>
+
             </div>
 
         </div>
+        <div id="experience">
+            <h1 class="section-title">Experience</h1>
 
+            <div class="experience-card">
+                <div class="exp-logo">
+                    <img src="hooman.png" alt="Hooman Logo" href="https://www.hoomanpets.com/">
+                </div>
+                <div class="exp-details">
+                    <h2>Hooman</h2>
+                    <p>Developed full branding guidelines and designed a complete website, focusing on modern, clean
+                        visuals
+                        and user experience.</p>
+                    <span class="exp-timeline">August 2025-Sep 2025</span>
+                </div>
+            </div>
 
+            <div class="experience-card">
+                <div class="exp-logo">
+                    <img src="makeaweb.png" alt="Make A Web Logo" href="">
+                </div>
+                <div class="exp-details">
+                    <h2>Make A Web</h2>
+                    <p>Designed banners, carousels, and logos, creating cohesive and visually engaging assets for
+                        digital
+                        campaigns.</p>
+                    <span class="exp-timeline">March 2025 – August 2025</span>
+                </div>
+            </div>
+        </div>
         <div id="whatelse">
             <h5>what else do i do</h5>
             <h3 class="hover-lift">
@@ -122,18 +205,18 @@
             <h2 class="">Designs <span class="label">That Speak </span><span class="label yellow">Louder </span></h2>
             <h2>Than Words</h2>
         </div>
-        <div id="footer">
-            <div id="left">
-                <h5>2025 &copy;</h5>
-                <h5 id="clock">11:01 AM EST</h5>
-            </div>
-            <div id="right">
-                <a href="https://github.com/ayesha-arbi" target="_blank" class="center-underline">Github</a>
-                <a href="https://www.linkedin.com/in/ayeshazahid-/" target="_blank"class="center-underline">Linkedin</a>
-                <a href="#" class="center-underline">fiverr</a>
-            </div>
-        </div>
     </div>
+
+    <div id="footer">
+        <div id="left">
+            <h5>2025 &copy;</h5>
+            <h5 id="clock">11:01 AM EST</h5>
+        </div>
+        <div id="right">
+            <a href="https://github.com/ayesha-arbi" target="_blank" class="center-underline">Github</a>
+            <a href="https://www.linkedin.com/in/ayeshazahid-/" target="_blank" class="center-underline">Linkedin</a>
+            <a href="#" class="center-underline">fiverr</a>
+        </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
